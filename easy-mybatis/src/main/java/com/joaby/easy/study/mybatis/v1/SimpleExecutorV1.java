@@ -4,7 +4,7 @@ import com.joaby.easy.study.mybatis.entity.Test;
 
 import java.sql.*;
 
-public class MySimpleExecutor implements MyExecutor {
+public class SimpleExecutorV1 implements ExecutorV1 {
 
     @Override
     public <T> T query(String statement, String parameter) {

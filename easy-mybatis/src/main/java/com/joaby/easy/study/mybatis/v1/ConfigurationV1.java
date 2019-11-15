@@ -8,12 +8,12 @@ import java.util.Map;
  * @author: yangjianbo
  * @Date: Created in 2019/11/12 15:53
  */
-public class MyConfiguration {
+public class ConfigurationV1 {
 
-    public <T> T getMapper(Class<T> type, MySqlSession sqlSession) {
+    public <T> T getMapper(Class<T> type, SqlSessionV1 sqlSession) {
         return (T) Proxy.newProxyInstance(type.getClassLoader(),
                 new Class[]{type},
-                new MyMapperProxy(sqlSession));
+                new MapperProxyV1(sqlSession));
     }
 
     static class TestMapperXml {
