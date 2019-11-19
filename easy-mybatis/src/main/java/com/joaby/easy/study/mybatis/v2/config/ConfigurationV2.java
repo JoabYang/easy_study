@@ -4,7 +4,9 @@ import com.joaby.easy.study.mybatis.entity.Test;
 import com.joaby.easy.study.mybatis.v2.binding.MapperRegistryV2;
 import com.joaby.easy.study.mybatis.v2.session.SqlSessionV2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,6 +34,12 @@ public class ConfigurationV2 {
     public class MapperEntity {
         public String SQL = "select * from test where id = ?";
         public Class RESULTTYPE = Test.class;
+        public List<String> FIELDNAMES = new ArrayList<>();
+
+        public MapperEntity() {
+            FIELDNAMES.add("id");
+            FIELDNAMES.add("name");
+        }
     }
 
 }

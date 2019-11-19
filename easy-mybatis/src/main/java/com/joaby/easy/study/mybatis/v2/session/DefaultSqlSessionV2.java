@@ -3,6 +3,8 @@ package com.joaby.easy.study.mybatis.v2.session;
 import com.joaby.easy.study.mybatis.v2.config.ConfigurationV2;
 import com.joaby.easy.study.mybatis.v2.executor.ExecutorV2;
 
+import java.util.List;
+
 /**
  * @author: yangjianbo
  * @Date: Created in 2019/11/15 19:53
@@ -23,7 +25,7 @@ public class DefaultSqlSessionV2 implements SqlSessionV2 {
     }
 
     @Override
-    public <T> T selectOne(String statement, Object parameter, Class<T> resultType) {
-        return executorV2.query(statement, parameter, resultType);
+    public <T> T selectOne(String sql, Object parameter, Class<T> resultType, List<String> fieldNames) {
+        return executorV2.query(sql, parameter, resultType, fieldNames);
     }
 }

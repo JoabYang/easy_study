@@ -27,7 +27,7 @@ public class MapperProxyV2 implements InvocationHandler {
         String key = method.getDeclaringClass().getName() + "." + method.getName();
         if (mapperEntityMap.containsKey(key)) {
             ConfigurationV2.MapperEntity mapperEntity = mapperEntityMap.get(key);
-            return sqlSessionV2.selectOne(mapperEntity.SQL, args[0], mapperEntity.RESULTTYPE);
+            return sqlSessionV2.selectOne(mapperEntity.SQL, args[0], mapperEntity.RESULTTYPE, mapperEntity.FIELDNAMES);
         }
         return method.invoke(this, args);
     }
