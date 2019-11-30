@@ -7,9 +7,9 @@ import com.joaby.easy.study.mybatis.v1.SqlSessionV1;
 import com.joaby.easy.study.mybatis.v2.session.SqlSessionV2;
 import com.joaby.easy.study.mybatis.v2.session.factory.SqlSessionFactoryBuilderV2;
 import com.joaby.easy.study.mybatis.v2.session.factory.SqlSessionFactoryV2;
-//import org.apache.ibatis.session.SqlSession;
-//import org.apache.ibatis.session.SqlSessionFactory;
-//import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.FileInputStream;
 
@@ -40,7 +40,7 @@ public class TestMain {
             SqlSessionFactoryV2 factoryV2 = new SqlSessionFactoryBuilderV2().build();
             SqlSessionV2 sqlSessionV2 = factoryV2.openSession();
             TestMapper mapperV2 = sqlSessionV2.getMapper(TestMapper.class);
-            System.out.println(mapperV2.selectByPrimaryKey(1));
+            System.out.println(mapperV2.selectByPrimaryKey(123));
         } catch (Exception e) {
             e.printStackTrace();
         }
