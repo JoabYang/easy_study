@@ -27,9 +27,9 @@ public class DefaultResultSetHandlerV2 implements ResultSetHandlerV2 {
             for (int i = 0; i < fieldNames.size(); i++) {
                 String methodName = "set" + toUpperCaseForFirstChar(fieldNames.get(i));
                 if (i == 0) {
-                    resultType.getMethod(methodName).invoke(obj, rs.getInt(i + 1));
+                    resultType.getMethod(methodName, Integer.class).invoke(obj, rs.getInt(i + 1));
                 } else {
-                    resultType.getMethod(methodName).invoke(obj, rs.getString(i + 1));
+                    resultType.getMethod(methodName, String.class).invoke(obj, rs.getString(i + 1));
                 }
             }
         }
