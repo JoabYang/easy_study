@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
 public class ZookeeperDemo {
     public static void main(String[] args) throws Exception {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        ZooKeeper zk = new ZooKeeper("192.168.201.153:2181,192.168.201.154:2181，192.168.201.155:2181", 2000, new Watcher() {
+        ZooKeeper zk = new ZooKeeper("192.168.201.153:2181,192.168.201.154:2181，192.168.201.155:2181", 5000, new Watcher() {
             @Override
             public void process(WatchedEvent watchedEvent) {
                 countDownLatch.countDown();

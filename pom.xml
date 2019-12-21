@@ -12,6 +12,7 @@
     <module>easy-mybatis</module>
     <module>easy-rmi</module>
       <module>easy-zookeeper</module>
+      <module>easy-activemq</module>
   </modules>
 
   <name>easystudy</name>
