@@ -11,6 +11,7 @@
   <modules>
     <module>easy-mybatis</module>
     <module>easy-rmi</module>
+    <module>easy-netty</module>
   </modules>
 
   <name>easystudy</name>
